@@ -1,0 +1,35 @@
+class base{
+	int Basev;
+	public base(){
+		Basev=0;
+		System.out.println("Base class constructors");
+		}
+		public base(int x);
+		{
+			Basev=x;
+			}
+		public display(){
+			System.out.println("Base Class Variable is:" +Basev);
+			}
+		}
+
+class derived1 extends base(){
+
+		public derived1(){
+			Derivedv1=0;
+			System.out.println("Derived1 class constructors");
+			}
+
+class derived2 extends derived2(){
+int derived2
+public derived2(int x,int );{
+				Derivedv2=y;
+				}
+			public display(){
+				System.out.println("Derived2 Class Variable is:" +Basev);
+				}
+			}
+
+public class DemoInheritance(){
+	public static void main(String[] args){
+		

@@ -1,0 +1,33 @@
+interface animal{
+	void speak();
+	void move();
+	}
+interface features extends animal{
+	void color();
+	void jawsize();
+	}
+public class dog implements animal,features{
+	public void speak(){
+		System.out.println("dog can speak");
+	}
+	public void move(){
+		System.out.println("dog can move");
+	}
+	public void color(){
+		System.out.println("dog is red in color");
+	}
+	public void jawsize(){
+		System.out.println("2.34");
+	}
+	public void showDog(){
+	System.out.println("Snuppy");
+	}
+	}
+public class dog{
+	public static void main(String args[]){
+		dog d=new dog();
+		d.speak();
+		d.color();
+		d.showDog();
+		}
+	}

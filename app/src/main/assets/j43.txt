@@ -1,0 +1,65 @@
+package animals;
+interface Animal{
+	public void eat();
+	public void travel();
+}
+
+Create a folder(p1) for package p1
+
+package p1;
+public class DemoPackage{
+	public static void main(String[] args){
+		//Derived d=new Derived();
+		P1NonSubclass obj= new P1NonSubclass();
+		}
+}
+
+
+
+
+package p1;
+public class Protection{
+	int n=0;
+	private int n_private=10;
+	protected int n_protected=20;
+	public int n_public=30;
+
+	public Protection(){
+		System.out.println("Base constructor:");
+		System.out.println("No modifier:" +n);
+		System.out.println("Private:" +n_private);
+		System.out.println("Protected:" +n_protected);
+		System.out.println("public:" +n_public);
+		}
+	}
+
+
+
+package p1;
+public class Derived extends Protection{
+
+	public Derived(){
+		System.out.println("thz is derived class");
+		System.out.println("No modifier:" +n);
+		//System.out.println("Private:" +n_private);// Not accessible in the derived class
+		System.out.println("Protected:" +n_protected);
+		System.out.println("public:" +n_public);
+		}
+	}
+
+
+
+package p1;
+public class P1NonSubclass{
+	
+
+	public P1NonSubclass(){
+		Protection p=new Protection();
+		System.out.println("Non Subclass constructor");
+		System.out.println("No modifier:" +p.n);
+		//System.out.println("Private:" +p.n_private);
+		System.out.println("Protected:" +p.n_protected);
+		System.out.println("public:" +p.n_public);
+		}
+	}
+

@@ -1,0 +1,13 @@
+#include<stdlib.h>
+int main()
+{
+   int n;
+   char buff[50]; 
+   n= read(0, buff, 50);
+
+    // 1st parameter is file descriptor (0 is for standard input)
+    // 2nd parameter is the buffer for storing the input
+    // 3rd parameter is the max. possible length of the input. n stores the number of characters read
+
+     write(1, buff, n);
+}

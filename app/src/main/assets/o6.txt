@@ -1,0 +1,27 @@
+
+#include<pthread.h>
+#include<stdio.h>
+#include<sys/types.h>
+
+void Thread1_function();
+void Thread2_function();
+
+void Thread1_function()
+{
+	printf("In thread 1\n");
+	}
+
+
+void Thread2_function()
+{
+	printf("In thread 2\n");
+	}
+
+main()
+{
+	pthread_t Thread1, Thread2;
+	pthread_create(&Thread1,NULL,Thread1_function,NULL);
+    pthread_create(&Thread2,NULL,Thread2_function,NULL);
+    pthread_join(Thread1,NULL);
+    pthread_join(Thread2,NULL);
+}

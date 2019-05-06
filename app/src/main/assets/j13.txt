@@ -1,0 +1,47 @@
+abstract class figure{
+	int dim1;
+	int dim2;
+	public figure(int x,int y)
+	{
+		dim1=x;
+		dim2=y;
+	}
+	public abstract void computeArea();
+	
+}
+
+class rectangle extends figure{
+	public rectangle(int d1,int d2)
+	{
+		super(d1,d2);
+	}
+	
+	public void computeArea()
+	{
+		System.out.println("Area is:" +(super.dim1+super.dim2));
+	}
+}
+
+class triangle extends figure{
+	public triangle(int d1,int d2)
+	{
+		super(d1,d2);
+	}	
+	public void computeArea()
+	{
+		System.out.println("Area is:" +(super.dim1*super.dim2));
+	}
+}
+
+public class demoFigure
+{
+	public static void main(String[] args){
+		figure f;
+		rectangle r=new rectangle(10,10);
+		f=r.computeArea();
+		f=new triangle(10,20);
+		f.computeArea();
+	}
+}
+
+	

@@ -1,0 +1,56 @@
+ import java.io.*;
+class Employee implements java.io.Serializable
+{
+ String name;
+ String address;
+ int SSN;
+ int number;
+public void mailCheck(){
+	System.out.println("Mailing check at:" +name+" "+address);
+	}
+
+}
+
+public class SerializeDemo{
+	public static void main(String[] args){
+		Employee e=new Employee();
+		e.name="LPU";
+		e.address="phagwara";
+		e.SSN=11233;
+		e.number=101;
+		try{
+			FileOutputStream fileOut=new FileOutputStream("employee.ser");
+			ObjectOutputStream out=new ObjectOutputStream(fileOut);
+			out.writeObject(e);
+			out.close();
+			fileOut.close();
+			System.out.println("Serialized data is saved in/tmp/employee.ser");
+			} catch(IOException i)
+			{
+				i.printStackTrace();
+				}
+			Employee e1=null;
+			try{
+			FileInputStream fileIn=new FileInputStream("employee.ser");
+			ObjectInputStream in=new ObjectInputStream(fileIn);
+			e1=(Employee) in.readObject();
+			in.close();
+			fileIn.close();
+			} catch(IOException i)
+			{
+				i.printStackTrace();
+				return;
+				}
+			catch(ClassNotFoundException c)
+			{
+				System.out.println("Employee class not found");
+				c.printStackTrace();
+				return;
+				}	
+				System.out.println("Deserialized employee...");
+				System.out.println("Name: " +e1.name);
+				System.out.println("address: " +e1.address);
+				System.out.println("SSN: " +e1.SSN);
+				System.out.println("number: " +e1.number);
+				}
+}

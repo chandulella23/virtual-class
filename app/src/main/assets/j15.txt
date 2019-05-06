@@ -1,0 +1,14 @@
+abstract class person{
+	abstract void eat();
+}
+
+class demoAnonymus{
+	public static void main(String[] args){
+		person p=new person(){
+			public void eat(){
+				System.out.println("This is anynomus class");
+		}
+	};
+p.eat();
+}
+}

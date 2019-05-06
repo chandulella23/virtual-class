@@ -1,0 +1,36 @@
+import java.awt.*;
+import java.applet.*;
+public class ThreadApplet extends Applet implements Runnable{
+	String msg;
+	int locX=0,locY=0;
+	public void init(){
+		setBackground(Color.cyan);
+		setForeground(Color.red);
+		new Thread(this).start();
+		//msg+="Inside init.";
+	}
+	public void start(){
+		//msg+="Inside start...";
+	}
+	public void run(){
+		while(true){
+			try{
+				Thread.sleep(100);
+				locX++;
+				locY++;
+				if(locX==800)
+				break;
+				repaint();
+			}
+			catch(InterruptedException i){
+				i.printStackTrace();
+				break;
+			}
+		}
+	}	
+	public void paint(Graphics g){
+		//msg+="Inside paint....";
+		g.drawString("Lovely",locX,locY);
+		g.drawOval(locX+300,locY+300,140,100);
+	}
+}

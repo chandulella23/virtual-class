@@ -1,0 +1,22 @@
+class DemoArray{
+public static void main(String[] args){
+		int sourceArray[]={1,2,3,4,5};
+		int targetArray[]=new int[sourceArray.length];
+		for(int element:sourceArray){
+			System.out.println(element);
+			}
+
+		System.arraycopy(sourceArray,0,targetArray,0,sourceArray.length);
+		System.out.println("target array values");
+		for(int element:targetArray){
+		System.out.println(element);
+		}
+
+		System.out.println("cloned array values");
+		int cloneArray[]=sourceArray.clone();
+		for(int element:cloneArray){
+			System.out.println(element);
+		}
+
+		}
+	}

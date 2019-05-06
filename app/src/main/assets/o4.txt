@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<sys/fcntl.h>
+
+
+
+main()
+{
+
+	int Read_FileDescriptor = open("TempTextFile.txt",O_RDONLY);
+    int Write_FileDescriptor = open("TempTextFile2.txt",O_WRONLY);
+    char * buffer;
+	read(Read_FileDescriptor,&buffer,10);
+    write(Write_FileDescriptor,&buffer,10);
+}

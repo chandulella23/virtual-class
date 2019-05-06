@@ -1,0 +1,22 @@
+import java.sql.*;
+public class TestDatabaseMetaData{
+	public static void main(String[] args) throws SQLException, ClassNotFoundException{
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("Driver Loaded");
+		Connection connection=DriverManager.getConnection("jdbc:mysql://localhost/MAHI","root","123");
+		System.out.println("Database Connected");
+		DatabaseMetaData dbMetaData=connection.getMetaData();
+		System.out.println("database URL:" +dbMetaData.getURL());
+		System.out.println("database username:" +dbMetaData.getUserName());
+		System.out.println("db productname:" +dbMetaData.getDatabaseProductName());
+		System.out.println("db productversion:" +dbMetaData.getDatabaseProductVersion());
+		System.out.println("JDBC drivername:" +dbMetaData.getDriverName());
+		System.out.println("JDBC driverversion:" +dbMetaData.getDriverVersion());
+		System.out.println("JDBC driver major version:" +dbMetaData.getDriverMajorVersion());
+		System.out.println("JDBC driver minor version:" +dbMetaData.getDriverMinorVersion());
+		System.out.println("Max no of connections:" +dbMetaData.getMaxConnections());
+		System.out.println("Max TableNameLength:" +dbMetaData.getMaxTableNameLength());
+		System.out.println("Max ColsInTable:" +dbMetaData.getMaxColumnsInTable());
+		connection.close();
+}
+}

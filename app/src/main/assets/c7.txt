@@ -1,0 +1,18 @@
+%{
+#include<stdio.h>
+int c=0,v=0;
+%}
+
+
+%%
+[aeiou] {v++;}
+[b-df-hj-np-tv-z] {c++;}
+$ {printf("file ends");yyterminate();}
+%%
+
+
+main()
+{
+    yylex();
+    printf("vowels:%d Consonants:%d",v,c);
+}

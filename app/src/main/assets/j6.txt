@@ -1,0 +1,58 @@
+class person{
+	String name,address,email;
+	String phone_number;
+	person(){
+		System.out.println("In super class");
+		}
+	person(String name, String address,String email,String phone_number)
+	{
+		this.name=name;
+		this.address=address;
+		this.email=email;
+		this.phone_number=phone_number;
+		}
+		void display()
+		{
+		System.out.println("name is:" +name);
+		System.out.println("address is:" +address);
+		System.out.println("email is:" +email);
+		System.out.println("phone_number is:" +phone_number);
+		}
+		}
+
+class student extends person{
+	final String status;
+	student(String name, String address,String email,String phone_number,String status)
+	{
+		super(name,address,email,phone_number);
+		this.status=status;
+		}
+		void display()
+		{
+			super.display();
+			System.out.println("the status is:" +status);
+			}
+			}
+
+
+class DemoPerson
+{
+	public static void main(String[] args)
+		{
+			java.util.Scanner s1=new java.util.Scanner(System.in);
+			System.out.println("Enter the name");
+			String name=s1.nextLine();
+			System.out.println("Enter the email");
+			String email=s1.nextLine();
+			System.out.println("Enter the address");
+			String address=s1.nextLine();
+			System.out.println("Enter the phone_number");
+			String phone_number=s1.nextLine();
+			System.out.println("Enter the status");
+			String status=s1.nextLine();
+
+			student stu=new student(name,address,email,phone_number,status);
+			stu.display();
+			}
+			}
+                                                                                                                                                                                                                                                                                                                                                                    

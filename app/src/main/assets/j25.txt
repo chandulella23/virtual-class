@@ -1,0 +1,98 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class MyListenerClass implements ActionListener{
+	public void actionPerformed(ActionEvent e){
+		System.out.println("the"+e.getActionCommand()+"button has clicked at"+new java.util.Date(e.getWhen()));
+}
+}
+
+
+
+public class ActionListenerDemo extends JFrame{
+	public ActionListenerDemo(){
+		JButton btnok=new JButton("OK");
+		JButton btncancel=new JButton("CANCEL");
+		
+		JPanel panel=new JPanel();
+		panel.setLayout(new FlowLayout(FlowLayout.LEFT,20,20));
+		
+		
+		MyListenerClass listener=new MyListenerClass();
+		btnok.addActionListener(listener);
+		btncancel.addActionListener(listener);
+		
+		panel.add(btnok);
+		panel.add(btncancel);
+		this.add(panel);
+}
+
+public static void main(String[] args){
+	ActionListenerDemo frame=new ActionListenerDemo();
+	frame.setTitle("show flow layout");
+	frame.setSize(300,300);
+	frame.setLocationRelativeTo(null);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setVisible(true);
+	}
+}
+
+
+
+
+			####################################################
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+/* class MyListenerClass implements ActionListener{
+	public void actionPerformed(ActionEvent e){
+		System.out.println("the"+e.getActionCommand()+"button has clicked at"+new java.util.Date(e.getWhen()));
+} */
+
+public class ActionListenerDemo extends JFrame implements ActionListener,MouseListene{
+	
+		JButton btnok=new JButton("OK");
+		JButton btncancel=new JButton("CANCEL");
+		
+	public ActionListenerDemo(){
+		JPanel panel=new JPanel();
+		panel.setLayout(new FlowLayout(FlowLayout.LEFT,20,20));
+		
+		
+		MyListenerClass listener=new MyListenerClass();
+		btnok.addActionListener(this);
+		btnok.addMouseListener(this);
+		btncancel.addActionListener(listener);
+		this.addWindowListener(this);
+		panel.add(btnok);
+		panel.add(btncancel);
+		this.add(panel);
+}
+
+	public void actionPerformed(ActionEvent e){
+		btnok.setText("Changed");
+		System.out.println("the"+e.getActionCommand()+"button has clicked at"+new java.util.Date(e.getWhen()));
+}
+
+
+	public void mouseClicked(MouseEvent e){
+		JOptionPane.showMessageDialog(this , "Eggs are not supposed to be green");
+}
+	public void mousePressed(MouseEvent e){}
+	public void mouseReleased(MouseEvent e){}
+	public void mouseEntered(MouseEvent e){}
+	public void mouseExited(MouseEvent e){}
+}
+public class ActionListenerDemo{
+public static void main(String[] args){
+	ActionListenerDemo frame=new ActionListenerDemo();
+	frame.setTitle("show flow layout");
+	frame.setSize(300,300);
+	frame.setLocationRelativeTo(null);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setVisible(true);
+	}
+}
+

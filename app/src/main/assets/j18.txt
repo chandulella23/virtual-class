@@ -1,0 +1,50 @@
+class doorknob{
+	public doorknob(){
+		System.out.println("door knob created");
+	}
+	protected void finalize(){
+		System.out.println("doorknob destroyed");
+	}
+}
+
+class door{
+	private doorknob dk=new doorknob();
+	public door(){
+		System.out.println("door created");
+	}
+	public doorknob getdk(){
+		return dk;
+	}
+	public void setdk(doorknob knob){
+		this.dk=knob;
+	}
+	protected void finalize(){
+		System.out.println("door destroyed");
+	}
+}
+
+class room{
+	private door d=new door();
+	public room(){
+		System.out.println("room created");
+	}
+	public door getd(){
+		return d;
+	}
+	public void setd(door dor){
+		this.d=dor;
+	}
+	protected void finalize(){
+		System.out.println("door destroyed");
+	}
+}
+
+
+class DemoAggregation{
+	public static void main(String[] args){
+		room r=new room();
+		System.out.println("room obj is:" +r);
+		System.out.println("doorobj is:" +r.getd());
+		System.out.println("doorknob obj is:" +r.getd().getdk());
+		}
+		}

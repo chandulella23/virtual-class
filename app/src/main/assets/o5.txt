@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<fcntl.h>
+
+main()
+{
+    int FileDescriptor = open("LSEEKtestFile.txt",O_RDONLY);
+    char* buffer;
+    read(FileDescriptor,&buffer,4);
+    lseek(FileDescriptor,4,SEEK_CUR);
+    read(FileDescriptor,&buffer,4);
+    write(1,&buffer,13);
+}

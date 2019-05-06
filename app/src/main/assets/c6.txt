@@ -1,0 +1,24 @@
+%{
+	#include<stdio.h>
+	int flag=0,count=0;
+%}
+
+
+%%
+[0-9]+.[0-9]+ {flag=1;}
+%%
+
+
+int main()
+{
+	yylex();
+	if(flag==1)
+	{
+		printf("Floating Point number.\n");
+	}
+	else
+	{
+		printf("Not floating point number.\n");
+	}
+return 0;
+}

@@ -1,0 +1,46 @@
+import java.sql.*;
+public class MySqlConn2{
+public static void main(String args[]){
+	Connection con=null;
+	try{
+		Class.forName("com.mysql.jdbc.Driver");
+		con=DriverManager.getConnection("jdbc:mysql://localhost/CHANDU","root","123");
+		con.setAutoCommit(false);
+		System.out.println("Connection is sucessfully with DB");
+
+		//Insertion starts here
+		String sql1="INSERT INTO employee Values(22,'Karan','ECE')";
+
+		Statement stmt2=con.createStatement();
+		int p1=stmt2.executeUpdate(sql1);							
+		System.out.println("Record 1 is inserted");
+
+		//2nd insertion
+		String sql2="INSERT INTO employee Values(23,'Kiran','ECE')";
+		
+		Statement stmt3=con.createStatement();
+		int p=stmt3.executeUpdate(sql2);						      
+	        System.out.println("Record 2 is inserted");
+		//Insert ends here
+
+		con.commit();
+		Statement stmt=con.createStatement();
+		ResultSet rs=stmt.executeQuery("select * from employee");
+
+		while(rs.next())
+		System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		con.close();
+	}
+
+	catch(Exception e){
+		System.out.println(e);
+		try{
+			con.rollback();
+		}
+		catch(SQLException ex){
+			System.out.println(ex);
+		}
+	}
+}
+}
+		

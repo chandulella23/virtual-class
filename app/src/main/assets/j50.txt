@@ -1,0 +1,38 @@
+class Table{
+	public synchronized void printTable(int n){
+		for(int i=1;i<=10;i++){
+		try{
+			Thread.sleep(500);
+		}
+		catch(InterruptedException e){
+			e.printStackTrace();
+		}
+		System.out.println(n+"*"+i+"="+n*i);
+		}
+		System.out.println("Table" +n+ "Ends here");
+	}
+}
+class TableThread extends Thread{
+	Table t;
+	int tnumber;
+	public TableThread(Table t1,int n){
+		t=t1;
+		tnumber=n;
+	}
+	public void run(){
+		t.printTable(tnumber);
+	}
+}
+public class SynchronizationDemo{
+	public static void main(String[] args){
+		Table obj=new Table(); //shared obj
+		TableThread t1=new TableThread(obj,5);
+		t1.start();
+		
+		TableThread t2=new TableThread(obj,10);
+		t2.start();
+		TableThread t3=new TableThread(obj,15);
+		t3.start();
+		
+		}
+}

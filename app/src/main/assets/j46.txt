@@ -1,0 +1,16 @@
+apublic class FinallyTest{
+	public static void main(String[] args){
+		int a[]={1,2};
+		try{
+			System.out.println("Access Element Three:" +a[3]);
+			}
+		catch(ArrayIndexOutOfBoundsException e){
+			System.out.println("Exception thrown:"+e);
+			}
+		finally{                    //finally will be printed even try catch doesnt work
+			a[0]=6;
+			System.out.println("First Element Value:" +a[0]);
+			System.out.println("The Finally Statement is executed");
+			}
+		}
+	}

@@ -1,0 +1,42 @@
+public class  ThreadOperation extends Thread{
+	int n1,n2;
+	String op;
+	public ThreadOperation(int n1,int n2,String op){
+	this.n1=n1;	
+	this.n2=n2;
+	this.op=op;	
+		
+		
+	}
+	public void addNumbers(){
+		System.out.println("Addition:"+(n1+n2));
+	}
+	public void multiplyNumbers(){
+		System.out.println("Multiplication:"+(n1*n2));
+	}
+	public void run(){
+		
+		try{
+				Thread.sleep(5000);
+				if(op.equals("add")){
+					addNumbers();
+				}
+				if(op.equals("mul")){
+					multiplyNumbers();
+				}
+			}
+			catch(InterruptedException e){
+				System.out.println(e);
+			}
+		}
+		
+		
+	public static void main(String[] args){
+		ThreadOperation t1=new ThreadOperation(100,50,"add");
+		ThreadOperation t2=new ThreadOperation(10,5,"mul");
+		t1.start();
+		t2.start();
+		
+}
+}
+		

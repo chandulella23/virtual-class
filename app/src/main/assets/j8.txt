@@ -1,0 +1,43 @@
+class base{
+	int i,j;
+	void showij(){
+		System.out.println("the values of i and j are:" +i+" "+j);
+	}
+	void add(){
+		System.out.println("the sum is:" +(i+j));
+	}
+}
+
+class derived extends base{
+	int k;
+
+	void showk(){
+		super.showij();
+		System.out.println("the value of i,j,k is:" +i+" "+j+" "+k);
+	}
+
+	void sum(){
+		System.out.println("the sum is:" +(i+j+k));
+	}
+
+	void add(){
+		System.out.println("the sum is:" +(i+j));
+	}
+}
+
+class Inheritance{
+	public static void main (String[] args){
+		base b=new base();
+		b.i=4;
+		b.j=8;
+		b.showij();
+		b.add();
+		derived d=new derived();
+		d.i=3;
+		d.j=5;
+		d.k=5;
+		d.showk();
+		d.sum();
+		d.add();
+	}
+}

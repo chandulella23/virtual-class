@@ -1,0 +1,25 @@
+class base{
+	int basev,derivedv;
+
+	public void display(int x,int y){
+		basev=x;
+		derivedv=y;
+		System.out.println("the base variable is:" +basev);
+	}
+}
+
+class derived extends base{
+
+	public void display(int x,int y){
+		super.display();
+		System.out.println("the derived value is:"+(basev+derivedv));
+	}
+}
+
+class Inheritancee{
+	public static void main(String[] args){
+		derived d=new derived(1,2);
+		base b=new base(3,4);
+		d.display();
+	}
+}

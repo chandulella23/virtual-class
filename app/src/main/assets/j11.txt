@@ -1,0 +1,45 @@
+class animal{
+	public void speak()
+	{
+		System.out.println("Animal can speak");
+	}
+
+	public void move()
+	{
+		System.out.println("Animal can move");
+	}
+
+	public void talk()
+	{
+		System.out.println("Animal cant talk ");
+	}
+}
+
+class dog extends animal{
+	public void speak()
+	{
+		System.out.println("Dog  speak as bow bow");
+	}
+
+	public void talk()
+	{
+		System.out.println("Dog  cant talk");
+	}
+
+	public void move()
+	{
+		System.out.println("Dog can run");
+	}
+}
+
+class Methodoverriding{
+	public static void main(String[] args){
+		dog d=new dog();
+		animal a1=new animal();
+		animal a2=new dog();
+		a1.move();
+		a2.talk();
+		a2.move();
+		d.move();
+	}
+}

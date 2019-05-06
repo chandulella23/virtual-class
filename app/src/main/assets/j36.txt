@@ -1,0 +1,12 @@
+import java.util.Scanner;
+import java.io.*;
+public class ReadData{
+	public static void main(String[] args) throws Exception{
+		File file=new File("CHANDU.txt");
+		Scanner input=new Scanner(file);
+		while(input.hasNext()){
+			System.out.println(input.next());
+		}
+		input.close();
+	}
+}

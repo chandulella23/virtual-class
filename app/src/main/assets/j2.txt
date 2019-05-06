@@ -1,0 +1,24 @@
+class jaggedArray
+{
+	public static void main(String[] args) {
+		int jaggedArray[][]=new int[3][]; //jaggedArray
+		jaggedArray[0]=new int[5];
+		jaggedArray[1]=new int[3];
+		jaggedArray[2]=new int[6];
+
+		System.out.println("input Arrays");
+		for(int i=0;i<jaggedArray.length;i++){
+ 			for(int j=0;j<jaggedArray[i].length;j++){             
+     			jaggedArray[i][j]=j;
+			}
+		}
+
+		System.out.println("output Arrays");
+		for(int i=0;i<jaggedArray.length;i++){
+			for(int j=0;j<jaggedArray[i].length;j++){
+     			System.out.print(jaggedArray[i][j]);
+			}
+			System.out.println();
+		}
+	}
+}

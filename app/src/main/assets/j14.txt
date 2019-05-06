@@ -1,0 +1,17 @@
+class outer_demo{
+	private int num=175;
+	public class inner_demo{
+		public int getNum(){
+		System.out.println("this is getNum method of the inner class");
+		return num;
+		}
+	}
+}
+
+public class DemoInner{
+	public static void main(String[] args){
+		outer_demo outer=new outer_demo();
+		outer_demo.inner_demo inner=outer.new inner_demo();
+		System.out.println(inner.getNum());
+	}
+}

@@ -1,0 +1,21 @@
+import java.awt.*;
+import java.applet.*;
+public class SampleApplet extends Applet{
+	String msg;
+		public void init(){
+			setBackground(Color.cyan);
+			setForeground(Color.red);
+			msg="Chandu";
+			}
+		public void start(){
+			msg+="Sai....";
+		}
+		public void paint(Graphics g){
+			msg+="Lella";
+			g.drawString(msg,10,30);
+			g.drawLine(0,0,100,100);
+			g.drawRect(10,50,60,50);
+			g.fillRoundRect(190,10,60,50,15,15);
+			g.drawOval(70,290,140,100);
+		}
+}

@@ -1,0 +1,77 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+	
+	int global_i = 0, global_j = 0;
+	int count =0;
+	char c,arr[100];
+	char symbol[10][10];
+	for(int i = 0; i < 10 ;i++){
+		for(int j = 0; j < 10 ;j++){
+			symbol[i][j] = ' ';
+		}
+	}	
+	
+	freopen("input.txt","r",stdin);
+	while ( scanf("%c",&c) != -1){
+		cout<<c;
+		arr[count++] = c;  
+	}
+	cout<<">>read Complete\n";
+	
+	for(int i = 0; i < count; i++){
+	
+		global_j = 0;
+		if(arr[i] == 'i' && arr[i+1] == 'n' && arr[i+2] == 't')
+		{
+			symbol[global_i][global_j] = arr[i+4];
+			global_j++;
+			symbol[global_i][global_j] = '1';
+			
+			for(int j = 0; j < count; j++){
+				if (arr[j] == '=' &&  arr[j-2] == symbol[global_i][0]){
+					global_j++;
+					symbol[global_i][global_j] = arr[j+2];
+				}
+				if (arr[j] == '(' &&  arr[j-1] == symbol[global_i][0]){
+					global_j++;
+					symbol[global_i][global_j] = arr[j+2];
+				}
+			}
+		global_i++;			
+		}
+	
+		if(arr[i] == 'v' && arr[i+1] == 'o' && arr[i+2] == 'i' && arr[i+3] == 'd'){
+			symbol[global_i][global_j] = arr[i+5];
+			global_j++;
+			symbol[global_i][global_j] = '2';
+			for(int j = 0; j < count; j++){
+				if (arr[j] == '(' &&  arr[j-1] == symbol[global_i][0]){
+					global_j++;
+					symbol[global_i][global_j] = arr[j+2];
+				}
+			}
+			global_i++;
+		}	
+	}
+	
+
+
+
+	cout<<"\n>>Symbol table\n";
+	for(int i = 0; i < 10 ;i++){
+	for(int j = 0; j < 10 ;j++){
+		if(symbol[i][j] == '1')
+		cout<<" int ";
+		if(symbol[i][j] == '2')
+		cout<<" void ";
+		if( symbol[i][j] != '1' && symbol[i][j] != '2' )
+		cout<<symbol[i][j];
+	}
+	cout<<"\n";
+	}	
+return 0;
+}

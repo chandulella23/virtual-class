@@ -1,0 +1,18 @@
+class outer_demo{
+	public void display(){
+		class inner_demo{
+			public void show(){	
+				System.out.println("This is inner one:");
+				}
+		}
+		inner_demo inner=new inner_demo();
+		inner.show();
+	}
+}
+
+public class demoMethodloading{
+	public static void main(String[] args){
+		outer_demo outer=new outer_demo();
+		outer.display();
+	}
+}

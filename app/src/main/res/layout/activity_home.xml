@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+
+    tools:context="com.project1.www.chandu.home"
+
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@drawable/blue">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#a80a1864"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4" />
+
+    <RadioGroup
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.19"
+        android:id="@+id/rg"
+        android:gravity="center_vertical">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compiler Design"
+            android:id="@+id/cd"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="53dp"
+            android:checked="false"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:onClick="getClicked"
+            android:textColor="#f5f5f5" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Operating System"
+            android:id="@+id/os"
+            android:layout_below="@+id/cd"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:textStyle="bold|italic"
+            android:textSize="20dp"
+            android:onClick="getClicked"
+            android:textColor="#f5f5f5" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C Programming"
+            android:id="@+id/c"
+            android:layout_below="@+id/cd"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:textStyle="bold|italic"
+            android:textSize="20dp"
+            android:onClick="getClicked"
+            android:textColor="#f5f5f5" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Java Classes"
+            android:id="@+id/java"
+            android:layout_below="@+id/cd"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:textStyle="bold|italic"
+            android:textSize="20dp"
+            android:onClick="getClicked"
+            android:textColor="#f5f5f5" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.78"
+        android:gravity="center|bottom"
+        android:orientation="vertical" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_fullscreen_ad"
+            android:id="@+id/next"
+            android:textColor="#ed234905"
+            android:textColorHighlight="#e0240222"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_home_footer">
+        </com.google.android.gms.ads.AdView>
+
+    </LinearLayout>
+
+</LinearLayout>

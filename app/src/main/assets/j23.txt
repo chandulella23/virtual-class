@@ -1,0 +1,28 @@
+import javax.swing.*;
+import java.awt.*;
+
+class MyLabel
+{
+	JFrame jf;
+	JLabel jl1,jl2,jl3,jl4;
+	MyLabel(){
+		jf=new JFrame();
+		jf.setLocation(100,150);
+		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jl1=new JLabel();
+		jl2=new JLabel("label2");
+		ImageIcon ic=new ImageIcon("Screenshot (21).jpg");
+		jl3=new JLabel(ic);
+		jl4=new JLabel("label4",ic,JLabel.CENTER);
+		jf.add(jl1,BorderLayout.NORTH);
+		jf.add(jl2,BorderLayout.SOUTH);
+		jf.add(jl3,BorderLayout.WEST);		
+		jf.add(jl4,BorderLayout.EAST);
+		jf.setVisible(true);	
+	}
+
+	public static void main(String[] arg)
+	{
+		new MyLabel();
+	}
+}

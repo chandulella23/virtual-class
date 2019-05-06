@@ -1,0 +1,18 @@
+import java.io.*;
+public class WritterData{
+	public static void main(String[] args) throws Exception{
+		File file=new File("CHANDU2.txt");
+		if(file.exists()){
+			System.out.println("File already exists");
+			System.exit(0);
+			}
+		
+		PrintWriter output=new PrintWriter(file);
+		output.println("Lpu");
+		output.print(90);
+		output.println("Punjab University");
+		output.print(100);
+		System.out.println("write operation is over");
+		output.close();
+	}
+}

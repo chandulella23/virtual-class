@@ -1,0 +1,28 @@
+%{
+	#include<stdio.h>
+	int count=0,i=0;
+%}
+
+
+open "{"
+close "}"
+
+
+%%
+{open} {i++;count++;}
+{close} {i--;if(i<0){printf("mismatch\n");};};
+%%
+
+
+int main()
+{
+	yyin=("floatpoint.l","r");	
+	yylex();
+	if(i==0)
+	printf("\ntotal parenthesis is %d.",count);
+return 0;
+}
+int yywrap(void)
+{
+return 1;
+}

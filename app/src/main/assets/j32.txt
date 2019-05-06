@@ -1,0 +1,46 @@
+import java.sql.*;
+public class MySqlConn3{
+public static void main(String args[]){
+	Connection con=null;
+	try{
+		Class.forName("com.mysql.jdbc.Driver");
+		con=DriverManager.getConnection("jdbc:mysql://localhost/CHANDU","root","123");
+		con.setAutoCommit(false);
+		System.out.println("Connection is sucessfully with DB");
+   		Statement stmt=con.createStatement();
+
+
+
+		String sql2="INSERT INTO employee (id,name,dept)"+"VALUES(?,?,?)";
+		PreparedStatement pstmt=con.prepareStatement(sql2);
+		pstmt.setInt(1,200);
+		pstmt.setString(2,"SAI");
+		pstmt.setString(3,"MEC");
+		pstmt.executeUpdate();
+
+ 		pstmt.setInt(1,201);
+		pstmt.setString(2,"RIYA");
+		pstmt.setString(3,"ECE");
+		pstmt.executeUpdate();
+
+		
+		System.out.println("Inserted Sucesfully");
+		String uquery="UPDATE employee set name='PIYA',dept='ECE' where id=201";
+		PreparedStatement pstmt2=con.prepareStatement(uquery);
+		pstmt.setInt(1,210);
+		pstmt.setString(2,"SI");
+		pstmt.setString(3,"MEC");
+		pstmt.executeUpdate();
+		con.commit();
+		ResultSet rs=stmt.executeQuery("select * from employee ");
+		while(rs.next())
+			System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+			con.close();
+			}
+			
+			catch(Exception e){
+				System.out.println(e);
+     					
+	}
+	}
+}

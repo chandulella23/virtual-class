@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+public class DemoArrayList{
+	public static void main(String[] args){
+		Circle c1=new Circle(5);
+		Circle c2=new Circle(10);
+		Circle c3=new Circle(15);
+		ArrayList cList=new ArrayList();
+		cList.add(c1);
+		cList.add(c2);
+		cList.add(c3);
+		cList.remove(c3);
+		System.out.println("Size of ArrayList:" +cList.size() +cList.contains(c2));
+		Circle gc;
+		for(int i=0;i<cList.size();i++){
+			gc=(Circle)cList.get(i);
+			gc.ComputeArea();
+			}
+		}
+}
+
+
+class Circle{
+	private double radius; 
+	public static int count; 
+
+	public Circle() { 
+		radius=0; 
+		count++;
+	}
+	public Circle(double r) {
+		radius=r;
+	}
+	
+
+	public static int showCount() {
+		return count;
+	}
+	static {
+	count=10;
+	}
+
+	public void computeArea() {
+		System.out.println("Area o circle is :" +(3.14*radius*radius));
+	}
+	}

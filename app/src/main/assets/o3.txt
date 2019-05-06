@@ -1,0 +1,12 @@
+#include<fcntl.h>
+#include<sys/stats.h>
+#include<sys/types.h>
+int main()
+{
+    int n, fd;
+    char buff[100];
+    n=read(0, buff, 100); //taking input from user
+    fd=open("file",O_CREAT | O_RDWR, 0777); // creating a new file using open. Open returns file descriptor
+    write(fd, buff, n); //writing into the file
+}
+

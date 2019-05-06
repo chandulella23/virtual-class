@@ -1,0 +1,24 @@
+import java.awt.*;            
+import javax.swing.*;
+public class jframedemo{
+	public static void main(String[] args){
+		ImageIcon icon=new ImageIcon("bh.png");
+		JFrame frame=new JFrame("Demo Frame");
+		frame.setLayout(null);
+		frame.setSize(500,500);
+		JLabel label=new JLabel(icon);
+		//label.setFont(new Font("Sarif",Font.ITALIC,12));
+		frame.setSize(200,100);
+		frame.setBounds(100,100,50,50);
+		JTextField text=new JTextField("enter ur name");
+		text.setBounds(0,0,100,30);
+		JButton button=new JButton("click me");
+		button.setBounds(150,200,100,30);
+		frame.add(text);
+		frame.add(label);
+		frame.add(button);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}

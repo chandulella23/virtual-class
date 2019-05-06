@@ -1,0 +1,114 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.Date;
+import java.io.*;
+public class LoginSerialize{
+	static SerializeFrame frame=null;
+	public static void main(String[] args){
+		frame=new SerializeFrame();
+		frame.addWindowListener(new WindowListener(){
+			public void windowOpened(WindowEvent e){
+				readSerializeDataFile();
+				}
+			public void windowDeactivated(WindowEvent e){}
+			public void windowActivated(WindowEvent e){}
+			public void windowIconified(WindowEvent e){}
+			public void windowDeiconified(WindowEvent e){}
+			public void windowClosed(WindowEvent e){}
+			public void windowGainedFocus(WindowEvent e){}
+			public void windowLostFocus(WindowEvent e){}
+			public void windowStateChanged(WindowEvent e){}
+			public void windowClosing(WindowEvent e){
+				writeSerializeDataFile(frame);
+				}
+			});
+			frame.setSize(280,250);
+			frame.setLocationRelativeTo(null);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setVisible(true);
+		}
+
+		public static void writeSerializeDataFile(SerializeFrame obj){
+			System.out.println("WindowListener method called:windowClosed.");
+			try{
+				FileOutputStream fileOut=new FileOutputStream("logindata.ser");
+				ObjectOutputStream out=new ObjectOutputStream(fileOut);
+				out.writeObject(obj);
+				out.close();
+				fileOut.close();
+				System.out.println("Serialized data is saved in/tmp/logindata.ser");
+				} catch(IOException ex)
+				{
+					System.out.println("Error:" +ex);
+				}	
+
+				}
+				public static void readSerializeDataFile(){
+				System.out.println("WindowListener method called:windowOpened.");	
+				SerializeFrame obj1;
+				try{
+					File file=new File("logindata.ser");
+					if(!file.exists()){
+					System.out.println("Create a file first named logindata.ser");
+
+					System.exit(0);
+					}
+				FileInputStream fileIn=new FileInputStream(file);
+				ObjectInputStream in=new ObjectInputStream(fileIn);
+				obj1=(SerializeFrame) in.readObject();
+				in.close();
+				fileIn.close();
+				}catch(IOException i)
+				{
+					i.printStackTrace();
+					return;
+					}
+				catch(ClassNotFoundException c)
+				{
+					System.out.println("Employee class not found");
+				c.printStackTrace();
+				return;
+				}	
+			System.out.println("Reading Object:" +obj1.loginTextBox.getText());
+			frame.loginTextBox.setText(obj1.loginTextBox.getText());
+			frame.passwordTextBox.setText(obj1.passwordTextBox.getText());
+			frame.checkbox.setSelected(obj1.checkbox.isSelected());
+			}
+			}
+class SerializeFrame extends JFrame implements java.io.Serializable{
+	JPanel panel=null;
+	JLabel loginLabel=null;
+	JTextField loginTextBox=null;
+	JLabel passwordLabel=null;
+	JPasswordField passwordTextBox=null;
+	JButton btnSave;
+	JButton btnReset;
+	JCheckBox checkbox=null;
+	JLabel resultLabel=null;
+
+	public SerializeFrame(){
+		panel=new JPanel();
+		panel.setBackground(Color.cyan);
+		panel.setLayout(new FlowLayout(FlowLayout.LEFT,10,10));
+		loginLabel=new JLabel("Login Id");
+		loginTextBox=new JTextField(20);
+		passwordLabel=new JLabel("Password");
+		passwordTextBox=new JPasswordField(20);
+		btnSave=new JButton("Login");
+		btnReset=new JButton("save");
+		checkbox=new JCheckBox("Forgot Password");
+		resultLabel=new JLabel("Status of Login...");
+	
+		panel.add(loginLabel);
+		panel.add(loginTextBox);
+		panel.add(passwordLabel);
+		panel.add(passwordTextBox);
+		panel.add(btnSave);
+		panel.add(btnReset);
+		panel.add(checkbox);
+		panel.add(resultLabel);
+		add(panel);
+		}
+	}
+	

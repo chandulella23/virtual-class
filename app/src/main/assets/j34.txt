@@ -1,0 +1,88 @@
+import java.sql.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class LoginJDBC{
+	public static void main(String[] args){
+		LoginFrame frame=new LoginFrame();
+		frame.setSize(280,250);
+		frame.setBackground(Color.BLUE);									
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		}
+	}
+
+class LoginFrame extends JFrame implements ActionListener{
+	JLabel loginLabel=null;
+	JTextField loginTextBox=null;
+	JLabel passwordLabel=null;
+	JPasswordField passwordTextBox=null;
+	JButton btnSave;
+	JButton btnReset;
+	JLabel resultLabel=null;
+	Connection conn=null;
+	PreparedStatement pstmt=null;
+ 	static int count=0;
+
+	public void initDB(){
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost/ENP","root","123");
+
+		System.out.println("LoginFrame Connection is succesfull with DB");
+		}
+		catch(Exception e){
+			System.out.println("Error:"+e);
+		}
+	}
+
+public LoginFrame(){
+	initDB();
+	setLayout(new FlowLayout(FlowLayout.LEFT,10,10));
+	loginLabel=new JLabel("Login Id");
+	loginTextBox=new JTextField(20);
+	passwordLabel=new JLabel("password");
+	passwordTextBox=new JPasswordField(20);
+	btnSave=new JButton("Save");
+	btnSave.addActionListener(this);
+	btnReset=new JButton("Reset");
+	btnReset.addActionListener(this);	
+	resultLabel=new JLabel("Status of login...");
+	add(loginLabel);
+	add(loginTextBox);
+	add(passwordLabel);
+	add(passwordTextBox);
+	add(btnSave);
+	add(btnReset);
+	add(resultLabel);
+}
+
+public void actionPerformed(ActionEvent e){
+	if(e.getActionCommand()=="Save"){
+		System.out.println("Save Clicked");
+		storeDatabase(loginTextBox.getText(),passwordTextBox.getText());
+		}
+	if(e.getActionCommand()=="Reset"){
+		System.out.println("Reset Clicked");
+		}
+	}
+
+	public void storeDatabase(String loginname,String password){
+		try{
+			String sql="INSERT INTO users(id,username,password,) values(?,?,?)";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1,++count);
+			pstmt.setString(2,loginname);			
+			pstmt.setString(3,password);
+			int result=pstmt.executeUpdate();
+			System.out.println("Record saved succesfully....");
+			resultLabel.setForeground(Color.RED);
+			resultLabel.setText("Record saved succesfully....");
+			}catch(Exception e){
+				System.out.println("Error:"+e);
+			}
+		}
+		}
+

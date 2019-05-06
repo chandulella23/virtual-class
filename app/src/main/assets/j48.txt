@@ -1,0 +1,184 @@
+class ChildThread implements Runnable{
+	private int count;
+	public ChildThread(){
+		count=1;
+	}
+	public void run(){
+		
+		while(count<=10){
+			System.out.println("Counter" +count);
+			try{
+				count++;
+				Thread.sleep(100);
+			}
+			catch(InterruptedException e){
+				System.out.println(e);
+			}
+		}
+		System.out.println("Exit from child thread");
+	} 
+}
+	public class MainThreadDemo1{
+		public static void main(String[] args){
+			Thread t=new Thread();
+			t.setName("Chandu");
+			t.setPriority(5);
+			System.out.println(t);
+			
+			ChildThread c1=new ChildThread();
+			Thread t1=new Thread(c1);
+			t1.setName("Sai");
+			System.out.println(t1);			
+			t1.start();
+			try{
+				t.sleep(100);
+			}
+			catch(InterruptedException ex){
+				System.out.println(ex);
+			}
+			System.out.println("Exit from main thread");
+			}
+		}
+
+
+		##########################################################
+
+class ChildThread implements Runnable{
+	private int count;
+	public ChildThread(){
+		count=1;
+	}
+	public void run(){
+		
+		while(count<=10){
+			System.out.println("Counter" +count);
+			try{
+				count++;
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException e){
+				System.out.println(e);
+			}
+		}
+		System.out.println("Exit from child thread1");
+}	}
+class ChildThread1 implements Runnable{
+	private int count;
+	public ChildThread1(){
+		count=1;
+	}
+	public void run(){
+		
+		while(count<=10){
+			System.out.println("Counter" +count);
+			try{
+				count++;
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException f){
+				System.out.println(f);
+			}
+		}
+		System.out.println("Exit from child thread2");
+	}
+ 
+}
+	public class MainThreadDemo2{
+		public static void main(String[] args){
+			Thread t=Thread.currentThread();
+			t.setName("Chandu");
+			t.setPriority(3);
+			System.out.println(t);
+			ChildThread c1=new ChildThread();
+			Thread t1=new Thread(c1);
+			t1.setName("Sai");
+			t1.setPriority(3);
+			System.out.println(t1);			
+			try{
+				t.sleep(9000);
+			}
+			catch(InterruptedException ex){
+				System.out.println(ex);
+			}
+			ChildThread1 c2=new ChildThread1();
+			Thread t2=new Thread(c2);
+			t2.setName("Lella");
+			t2.setPriority(2);
+			System.out.println(t2);			
+			t1.start();
+			t2.start();
+			try{
+				t.sleep(9000);
+			}
+			catch(InterruptedException i){
+				System.out.println(i);
+			}
+			System.out.println("Exit from main thread");
+			}	
+
+	}
+
+
+		##################################################################
+
+class  MainThreadDemo4 extends Thread{
+	int count;
+	public MainThreadDemo4(String name){
+		super(name);
+		count=1;
+		
+		System.out.println(this);
+	}
+	public void run(){
+		while(count<=10){
+					System.out.println(Thread.currentThread().getName()+"Counter" +count);
+			try{
+				count++;
+				Thread.sleep(0);
+			}
+			catch(InterruptedException e){
+				System.out.println(e);
+			}
+		}
+		System.out.println(Thread.currentThread().getName()+"Exit from child thread");
+		}
+	public static void main(String[] args){
+		MainThreadDemo4 th1=new MainThreadDemo4("FirstThread");
+		th1.start();
+		
+}
+
+}		
+
+
+		##################################################
+
+public class SimpleThread extends Thread{
+	public void run(){
+		try{
+			Thread.sleep(0);
+		}
+		catch(InterruptedException e){
+			e.printStackTrace();
+		}
+		System.out.println("Exit From"+Thread.currentThread().getName());
+		}
+		public static void main(String[] args){
+			SimpleThread th=new SimpleThread();
+			th.setName("MySimpleThread");
+			//th.start();
+			//try{
+			//Thread.sleep(4000);
+			//}
+			//catch(InterruptedException e){
+			//e.printStackTrace();
+			//}
+			if(th.isAlive()){
+				System.out.println("Simple Thread is Alive");
+			}
+			else{
+				System.out.println("Simple Thread is Dead");
+			}
+			System.out.println("Exit from main");
+			}
+		}

@@ -1,0 +1,223 @@
+<resources>
+    <string name="app_name">Chandu</string>
+    <string name="app1_name" color="#f5f5f5">COMPILER Programms</string>
+    <string name="app2_name" color="#f5f5f5">OS Programms</string>
+    <string name="app3_name" color="#f5f5f5">Virtual Class</string>
+    <string name="app4_name" color="#f5f5f5">About Us</string>
+    <string name="app5_name" color="#f5f5f5">C programming</string>
+    <string name="app6_name" color="#f5f5f5">Java Classes</string>
+    <string name="virtual_class_room">Virtual Class Room</string>
+    <string name="Next">next</string>
+
+    <string name="title_activity_second_activiy">Interstitial</string>
+
+    <string name="btn_fullscreen_ad">GET STARTED</string>
+
+    <!-- AdMob ad unit IDs -->
+    <string name="banner_home_footer">ca-app-pub-0664570763252260/3326522424</string>
+    <string name="interstitial_full_screen">ca-app-pub-0664570763252260/1769900428</string>
+
+    <string-array name="os">
+
+        <item>Print Hello On Screen</item>
+        <item>Read input from the user and Print it</item>
+        <item>Create a file and write some content into it </item>
+        <item>Implementation of open() read() write() system calls</item>
+        <item>lseek() system call</item>
+        <item>Program that creates child process</item>
+        <item>Send message from parent to child</item>
+        <item>Parent process prints 20-29 and Child process prints0-9</item>
+        <item>Program to create threads</item>
+        <item>Program to show the race condition</item>
+        <item>Program for process synchronization using locks </item>
+        <item>Program for process synchronization using semaphores</item>
+        <item>Bankers Algorithm</item>
+        <item>Dinning Philospher</item>
+        <item>Deadlock simulation using locks and threads </item>
+        <item>Inter-process communication using  pipe function</item>
+        <item>Inter-process communication using  popen/pclose function</item>
+        <item>Program to create a shared memory segment and write some content into it</item>
+        <item>Reads whatever was written in the shared memory segment</item>
+
+    </string-array>
+
+    <string-array name="cd">
+        <item>C  : Keyword Identifier </item>
+        <item>C : Operator Identifier </item>
+        <item>C  : First of grammar </item>
+        <item>C  : Symbol Table </item>
+        <item>LEX: Email </item>
+        <item>LEX: Floatiing Point </item>
+        <item>LEX: Count num of Vowels and Consonants </item>
+        <item>LEX: Calculator </item>
+        <item>LEX: Count num of Postive and Negative integers and fractions </item>
+        <item>LEX: Count the num of Identifers in a file </item>
+        <item>LEX: Count the num of words lines amd spaces </item>
+        <item>LEX: Whether a statement is Simple or Compound </item>
+        <item>LEX: Replace printf and scanf with readf and writef </item>
+
+        <item>YACC: Count the num of Comment lines </item>
+        <item>YACC: To evaluate Arithmetic expression </item>
+        <item>YACC: Letter followed by a digit | letter </item>
+        <item>YACC: Valid Arithmetic expression that uses operator +,-,*,/ </item>
+        <item>YACC: Recognise the Grammar(anb where n>=10)  </item>
+        <item>YACC: Heat and thermo </item>
+        <item>YACC:  Paranthesis </item>
+
+
+    </string-array>
+
+    <string-array name="c">
+        1
+        <item> Print Hello and Add two numbers</item>
+        2
+        <item> Calculate the area of square </item>
+        3
+        <item> Find Greatest in 3 numbers </item>
+        4
+        <item> Calculate sum of 5 subjects and find percentage </item>
+        5
+        <item> Check whether the number is even or not </item>
+        6
+        <item> Check whether the number is prime or not </item>
+        7
+        <item> Check whether the num is Pallindrome or not </item>
+        8
+        <item> Print First 10 natural numbers </item>
+        9
+        <item> Fibonacci Series </item>
+        10
+        <item> Factorial of a number </item>
+        11
+        <item> Reverse a number </item>
+        12
+        <item> Find the smallest element in an array </item>
+        13
+        <item> Find the largest element in an array </item>
+        14
+        <item> Revaerse an array </item>
+        15
+        <item> Copy all elements of an array to another array </item>
+        16
+        <item> Insert element in an array </item>
+        17
+        <item> Delete an element from specified location in an array </item>
+        18
+        <item> Linear Serach </item>
+        19
+        <item> Binary Search </item>
+        20
+        <item> Arrange elements in an order in an array </item>
+        21
+        <item> Add two arrays </item>
+        22
+        <item> Print Square of each element in 2D array </item>
+        23
+        <item> Working of Pointers </item>
+        24
+        <item> Access Array Elements Using Pointers </item>
+        25
+        <item> Program to find the sum of six numbers with arrays and pointers </item>
+        26
+        <item>  Program to Swap Elements Using Call by Reference </item>
+        27
+        <item> Using C malloc() and free() </item>
+        28
+        <item> Using C calloc() and free() </item>
+        29
+        <item> Using realloc() </item>
+        30
+        <item> Find Largest Element Using Dynamic Memory Allocation - calloc() </item>
+        31
+        <item> how to read string from terminal </item>
+        32
+        <item> read line of text character by character </item>
+        33
+        <item> read line of text using gets() and puts() </item>
+        34
+        <item> Passing Strings to Functions </item>
+        35
+        <item>  Find the Frequency of Characters </item>
+        36
+        <item>  Program to count vowels, consonants  </item>
+        37
+        <item>  Calculate Length of String without Using strlen() Function </item>
+        38
+        <item> Concatenate Two Strings Without Using strcat()</item>
+        39
+        <item> Remove Characters in String Except Alphabets </item>
+        40
+        <item> Store Information and Display it Using Structure </item>
+
+        41
+        <item> Program to add two distances in inch-feet system</item>
+        42
+        <item>  Store Information in Structure and Display it </item>
+        43
+        <item> Demonstrate the Dynamic Memory Allocation for Structure</item>
+
+
+    </string-array>
+
+    <string-array name="java">
+
+        1<item> Arrays </item>
+        2<item> Jagged Arrays </item>
+        3<item> Matrix Arrays </item>
+        4<item> Array List </item>
+        5<item> Constructor Chaining </item>
+        6<item> Use of this and super keywords</item>
+        7<item> Inheritance: derived class extends base class</item>
+        8<item> Inheritance </item>
+        9<item> Inheritance1 </item>
+        10<item> Inheritance2 </item>
+        11<item> Method Overriding </item>
+        12<item> Method Overloading </item>
+        13<item> Abstract class </item>
+        14<item> Outer and Inner claases </item>
+        15<item> Anonymous classs </item>
+        16<item> Method Loading </item>
+        17<item> Garbage collection scope </item>
+        18<item> Aggregation </item>
+        19<item> Interface Example 1 </item>
+        20<item> Interface Example 2 </item>
+        21<item> Interface Example using final variable </item>
+        22<item> Basic JFrame </item>
+        23<item> MyLabel using JFrames </item>
+        24<item> Layouts Using JFrames </item>
+        25<item> Action Listener </item>
+        26<item> Print Helloworld extends Applet </item>
+        27<item> Sample Applet </item>
+        28<item> Basic JApplet  </item>
+        29<item> Applets implements interface </item>
+        30<item> Coonection to JDBC </item>
+
+        31<item> Sample JDBC connection </item>
+        32<item> JDBC conncetion with Prepared Statement </item>
+        33<item> JDBC connection through batches </item>
+        34<item> Create a Login form using JDBC connection</item>
+
+        35<item> Accessing File properties </item>
+        36<item> Read data from file </item>
+        37<item> Write data into file </item>
+        38<item> Database Metadata </item>
+        39<item> Use of PrintWriter </item>
+
+        40<item> Copy one file contents into another </item>
+        41<item> Serialization concept </item>
+        42<item> Login Serialization example </item>
+        43<item> Packages Concept </item>
+
+        44<item> Try Catch examples </item>
+        45<item> Use of Throw in try and catch block </item>
+        46<item> Use of finally in try and catch block </item>
+        47<item> Thread Operations </item>
+        48<item> Thread Examples </item>
+        49<item> Thread Applet </item>
+        50<item> Synchronization </item>
+        51<item> Strings Concept </item>
+        52<item> Examples on Strings  </item>
+        53<item> String is pallindrome or not </item>
+
+    </string-array>
+</resources>
